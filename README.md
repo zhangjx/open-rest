@@ -1,59 +1,54 @@
-## open-rest ![NPM version](https://img.shields.io/npm/v/open-rest.svg?style=flat)
+# Open-rest
 
-Standard rest server, Base on restify and sequelize
+Standard restful api server, Base on restify and sequelize
 
-### Installation
+[![Build status](https://api.travis-ci.org/open-node/open-rest.svg?branch=master)](https://travis-ci.org/open-node/open-rest)
+[![codecov](https://codecov.io/gh/open-node/open-rest/branch/master/graph/badge.svg)](https://codecov.io/gh/open-node/open-rest)
+
+
+
+## Installation
 ```bash
-$ npm install open-rest
+npm install open-rest --save
 ```
 
-### Example
-```js
-var openRest = require('open-rest');
-openRest.initialize(__dirname + '/app');
+## Quick Start
+```bash
+// 克隆样本功能
+git clone git@github.com:open-node/open-rest-es6-boilerplate.git myApp
+cd myApp
+
+// 安装依赖库包
+npm install
+
+// 安装部署
+npm run setup
+
 ```
 
-### App directory agreement
+## App directory agreement
 <pre>
-├── app // 所有跟 webservice 直接相关的用户的程序文件，均在这里
-│   ├── configs // 存放 配置文件
-│   ├── controllers // 存放控制器文件
-│   ├── data // 存放应用需要用到的某些固定数据
-│   ├── lib // 存放一些公用的程序文件, 例如 ./utils.coffee
-│   ├── locale // 存放 i18n, L10n 的一些文件
-│   ├── middle-wares // 存放中间件程序文件
-│   ├── models // 存放 model 的定义文件
-│   └── routes.coffee // 存放路由初始化函数
-├── cluster.coffee // 多核启动脚本
-├── cron.coffee // 计划任务启动脚本
-├── index.coffee // 单核启动脚本
-├── LICENSE // LICENSE 文件
-├── package.json // 项目管理信息
-└── README.md // 说明文档
+├── app
+│   ├── configs
+│   ├── controllers
+│   ├── data
+│   ├── lib
+│   ├── locale
+│   ├── middle-wares
+│   ├── models
+│   └── routes.js
+├── index.js
+├── LICENSE
+├── package.json
+└── README.md
 </pre>
 
-### Quick start
+## index.js
+```js
+var rest = require('open-rest');
 
-<pre>npm install -g open-rest</pre>
-<pre>mkdir ~/testapp && openrest init ~/testapp && cd ~/testapp</pre>
-
-### Run
-<pre>./index.coffee</pre>
-OR
-<pre>./cluster.coffee</pre>
-
-### Test
-First
-<pre>export webmode=apitest; ./index.coffee</pre>
-
-### Model defined
-<pre>viim ./app/models/user.coffee</pre>
-
-### Table sync(create)
-<pre>openrest table-sync</pre>
-
-Second in other terminal
-<pre>npm test</pre>
+rest(__dirname + '/app');
+```
 
 ### Contributing
 - Fork this repo
@@ -65,7 +60,9 @@ Second in other terminal
 - Open a pull request, and enjoy <3
 
 ### MIT license
-Copyright (c) 2014 Redstone Zhao
+Copyright (c) 2016 Open-node
+Author Redstone Zhao
+Email: 13740080@qq.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the &quot;Software&quot;), to deal

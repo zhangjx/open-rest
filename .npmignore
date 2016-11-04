@@ -1,5 +1,6 @@
 .DS_*
 node_modules
+node_modules/*
 *.sublime*
 psd
 thumb
@@ -10,4 +11,10 @@ thumb
 samples
 build
 *~
+test
+test/*
+docs
+docs/*
 npm-debug.log
+coverage
+coverage/*

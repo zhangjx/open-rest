@@ -1,13 +1,10 @@
 {
   "name": "open-rest",
-  "version": "2.7.1",
+  "version": "7.0.0",
   "description": "Standard rest server, Base on restify and sequelize",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
-  },
-  "bin": {
-    "openrest": "./bin/openrest"
+    "test": "npm install && ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec"
   },
   "repository": {
     "type": "git",
@@ -26,9 +23,16 @@
   "homepage": "https://github.com/open-node/open-rest",
   "dependencies": {
     "commander": "^2.4.0",
+    "lodash": "^4.15.0",
     "mysql": "^2.5.2",
-    "restify": "^2.8.3",
-    "sequelize": "2.0.0-rc8",
-    "underscore": "^1.7.0"
+    "open-router": "^0.2.0",
+    "restify": "4.1.1",
+    "sequelize": "3.24.3"
+  },
+  "devDependencies": {
+    "axios": "^0.14.0",
+    "codecov": "^1.0.1",
+    "istanbul": "^0.4.4",
+    "mocha": "^3.0.2"
   }
 }
